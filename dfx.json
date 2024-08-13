@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "VibeChain_backend": {
+      "build": "python -m kybra VibeChain_backend src/VibeChain_backend/src/main.py src/VibeChain_backend/VibeChain_backend.did",
+      "candid": "src/VibeChain_backend/VibeChain_backend.did",
+      "gzip": true,
+      "post_install": ".kybra/VibeChain_backend/post_install.sh",
+      "type": "custom",
+      "wasm": ".kybra/VibeChain_backend/VibeChain_backend.wasm"
+    },
+    "VibeChain_frontend": {
+      "dependencies": [
+        "VibeChain_backend"
+      ],
+      "source": [
+        "src/VibeChain_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "VibeChain_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
