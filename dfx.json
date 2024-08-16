@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "hackathon1_backend": {
+      "build": "python -m kybra hackathon1_backend src/hackathon1_backend/src/main.py src/hackathon1_backend/hackathon1_backend.did",
+      "candid": "src/hackathon1_backend/hackathon1_backend.did",
+      "gzip": true,
+      "post_install": ".kybra/hackathon1_backend/post_install.sh",
+      "type": "custom",
+      "wasm": ".kybra/hackathon1_backend/hackathon1_backend.wasm"
+    },
+    "hackathon1_frontend": {
+      "dependencies": [
+        "hackathon1_backend"
+      ],
+      "source": [
+        "src/hackathon1_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "hackathon1_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

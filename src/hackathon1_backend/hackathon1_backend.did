@@ -1,0 +1,4 @@
+service : {
+    "fetch_data_directly" : () -> (text) query;
+    "fetch_data_from_spotify" : () -> (text);
+};
